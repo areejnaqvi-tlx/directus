@@ -1,0 +1,5 @@
+{
+  "themes": {
+    "my-theme": "public/extensions/custom/themes/my-theme"
+  }
+}

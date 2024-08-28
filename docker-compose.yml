@@ -1,0 +1,21 @@
+services:
+  directus:
+    image: directus/directus:10.11.2
+    ports:
+      - 8055:8055
+    volumes:
+      - ./database:/directus/database
+      - ./uploads:/directus/uploads
+      - ./extensions:/directus/extensions
+    environment:
+      SECRET: "replace-with-secure-random-value"
+      ADMIN_EMAIL: "areej.naqvi@techlogix.com"
+      ADMIN_PASSWORD: "d1r3ctu5"
+      DB_CLIENT: "sqlite3"
+      DB_FILENAME: "/directus/database/data.db"
+      WEBSOCKETS_ENABLED: "true"
+      CORS_ENABLED: "true"  # Enable CORS headers
+      CORS_ORIGIN: "http://localhost:4200"  # Specify the allowed origin for your Angular app
+      CORS_METHODS: "GET,POST,PATCH,DELETE"  # Specify allowed HTTP methods
+      CORS_ALLOWED_HEADERS: "Content-Type,Authorization"  # Specify allowed headers
+      CORS_CREDENTIALS: "true"  # Allow sending credentials (e.g., cookies) in CORS requests
